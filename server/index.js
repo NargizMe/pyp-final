@@ -18,11 +18,11 @@ mongoose.connect(
 //DB TABLE
 const adsSchema = new Schema({
   name: String,
-  categroy: String,
+  category: String,
   supplierName: String,
   price: String,
   description: String,
-  image: String,
+  imgUrl: String,
   email: String,
 });
 
@@ -70,7 +70,7 @@ app.post("/ads", (req, res) => {
     price: req.body.price,
     description: req.body.description,
     email: req.body.email,
-    imageUrl: req.body.imageUrl,
+    imgUrl: req.body.imgUrl,
 
   });
   ad.save();
