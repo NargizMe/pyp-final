@@ -17,7 +17,7 @@ mongoose.connect(
 //DB TABLE
 const adsSchema = new Schema({
   name: String,
-  categroy: String,
+  category: String,
   supplierName: String,
   price: String,
   description: String,
