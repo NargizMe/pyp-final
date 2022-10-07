@@ -22,10 +22,7 @@ function CardItem(props) {
     
         <Card
           style={{ width: 300 }}
-          cover={
-          <Link to={`/details/${props.data._id}`}>
-            <img alt="example" src={props.data.imgUrl} />
-          </Link>}
+          cover={<img alt="example" src={props.data.imgUrl} />}
           actions={[
             <HeartOutlined
               onClick={() => handleFavorite(props.data)}
@@ -36,8 +33,8 @@ function CardItem(props) {
         >
           <Link to={`/details/${props.data._id}`}>
             <Meta
-              title={`${props.data.name}`}
-              description={`${props.data.description}`}
+            title={`${props.data.name}`}
+            description={`${props.data.description}`}
           />
           </Link>
        
