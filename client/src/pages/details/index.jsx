@@ -24,7 +24,6 @@ const DetailsPage = () => {
         imagesrc: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShLfEIRIkabpkviMYx_czoVFk650mewV5hNw&usqp=CAU'
     }
 
-    let fill = '#08c'
     const handleClick = () => { console.log('fill')}
 
     return (
