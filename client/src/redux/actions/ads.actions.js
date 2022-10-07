@@ -1,6 +1,6 @@
 import axios from "axios"
 
-let baseUrl = `https://northwind.vercel.app/api/products`;
+let baseUrl = `http://localhost:8080/ads`;
 
 export const getAllAds = () => {
     return async (dispatch) => {
