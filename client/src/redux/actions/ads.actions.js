@@ -1,6 +1,6 @@
 import axios from "axios"
 
-let baseUrl = ``;
+let baseUrl = `http://localhost:8080/ads`;
 
 export const getAllAds = () => {
     return async (dispatch) => {
@@ -11,6 +11,26 @@ export const getAllAds = () => {
             .then(result =>
                 dispatch({
                     type: 'GET_ADS_SUCCESS',
+                    payload: result.data
+                }))
+            .catch(error => {
+                dispatch({
+                    type: 'GET_ADS_FAIL',
+                    payload: error
+                })
+            })
+    }
+}
+
+export const getById = (id) => {
+    return async (dispatch) => {
+        dispatch({
+            type: 'GET_AD_BY_ID',
+        })
+        axios.get(`${baseUrl}/${id}`)
+            .then(result =>
+                dispatch({
+                    type: 'GET_ID_SUCCESS',
                     payload: result.data
                 }))
             .catch(error => {
