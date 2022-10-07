@@ -1,5 +1,10 @@
-import React from "react";
 import "antd/dist/antd.css";
+import {
+  EditOutlined,
+  EllipsisOutlined,
+  SettingOutlined,
+  HeartOutlined,
+} from "@ant-design/icons";
 import { Card } from "antd";
 
 const { Meta } = Card;
@@ -8,16 +13,22 @@ function CardItem() {
   return (
     <div>
       <Card
-        hoverable
-        style={{ width: 240 }}
+        style={{ width: 300 }}
         cover={
           <img
             alt="example"
-            src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+            src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
           />
         }
+        actions={[
+          <HeartOutlined key="settings" />,
+          <EllipsisOutlined key="ellipsis" />,
+        ]}
       >
-        <Meta title="Europe Street beat" description="www.instagram.com" />
+        <Meta
+          title="Card title"
+          description="This is the description"
+        />
       </Card>
     </div>
   );
