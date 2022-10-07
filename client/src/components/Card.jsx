@@ -19,11 +19,13 @@ function CardItem(props) {
     dispatch(addToFavoritesAction(item));
   }
   return (
-    <Link to={`/details/${props.data._id}`}>
-      <div>
+    
         <Card
           style={{ width: 300 }}
-          cover={<img alt="example" src={props.data.imgUrl} />}
+          cover={
+          <Link to={`/details/${props.data._id}`}>
+            <img alt="example" src={props.data.imgUrl} />
+          </Link>}
           actions={[
             <HeartOutlined
               onClick={() => handleFavorite(props.data)}
@@ -32,13 +34,14 @@ function CardItem(props) {
             <EllipsisOutlined key="ellipsis" />,
           ]}
         >
-          <Meta
-            title={`${props.data.name}`}
-            description={`${props.data.description}`}
+          <Link to={`/details/${props.data._id}`}>
+            <Meta
+              title={`${props.data.name}`}
+              description={`${props.data.description}`}
           />
+          </Link>
+       
         </Card>
-      </div>
-    </Link>
   );
 }
 
