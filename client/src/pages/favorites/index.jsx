@@ -1,9 +1,27 @@
-import React from 'react'
+import CardItem from "../../components/Card";
+import { Col, Divider, Row } from "antd";
 
-const FavoritesPage = () => {
+
+function FavoritesPage() {
   return (
-    <div>FavoritesPage</div>
-  )
+    <div>
+      <Row gutter={[16, 24]}>
+        <Col className="gutter-row" span={6}>
+          <CardItem />
+        </Col>
+        <Col className="gutter-row" span={6}>
+          <CardItem />
+        </Col>
+        <Col className="gutter-row" span={6}>
+          <CardItem />
+        </Col>
+        <Col className="gutter-row" span={6}>
+          <CardItem />
+        </Col>
+      </Row>
+      <Divider orientation="left"></Divider>
+    </div>
+  );
 }
 
-export default FavoritesPage
+export default FavoritesPage;
