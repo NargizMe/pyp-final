@@ -22,6 +22,7 @@ const adsSchema = new Schema({
   price: String,
   description: String,
   image: String,
+  email: String,
 });
 
 const Ads = mongoose.model("Ads", adsSchema);
