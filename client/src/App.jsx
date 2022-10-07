@@ -4,6 +4,8 @@ import AddAdvertisementPage from "./pages/add-advertisement";
 import FavoritesPage from "./pages/favorites";
 import HomePage from "./pages/home/HomePage";
 import Navbar from "./components/Navbar";
+import SignUp from "./pages/signUp";
+import Login from "./pages/add-advertisement/login";
 // import { Breadcrumb, Layout, Menu } from "antd";
 
 function App() {
@@ -26,7 +28,10 @@ function App() {
     </Header> */}
     <Navbar/>
       <Routes>
-        <Route path="/" element={<HomePage />} />
+
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/home" element={<HomePage />} />
         <Route path="/favorites" element={<FavoritesPage />} />
         <Route path="/add-advertisement" element={<AddAdvertisementPage />} />
         <Route path="/details/:id" element={<DetailsPage/>} />
