@@ -1,9 +1,11 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import 'antd/dist/antd.css';
-import { Avatar, Card } from 'antd';
+import {Card } from 'antd';
 
-const axios = require('axios').default;
+//const axios = require('axios').default;
+
+const { Meta } = Card;
 
 const DetailsPage = () => {
 
