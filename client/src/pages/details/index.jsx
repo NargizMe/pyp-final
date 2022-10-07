@@ -1,7 +1,8 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import 'antd/dist/antd.css';
-import {Card } from 'antd';
+import {Card, Col, Row } from 'antd';
+import { HeartOutlined } from '@ant-design/icons';
 
 //const axios = require('axios').default;
 
@@ -23,26 +24,39 @@ const DetailsPage = () => {
         imagesrc: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShLfEIRIkabpkviMYx_czoVFk650mewV5hNw&usqp=CAU'
     }
 
+    const handleClick = () => { console.log('fill')}
+
     return (
-        <Card
-            style={{ width: 300 }}
-            cover={
-            <img
-                alt="example"
-                src={fakeData.imagesrc}
-            />
-            }
-            actions={[
-            // <SettingOutlined key="setting" />,
-            // <EditOutlined key="edit" />,
-            // <EllipsisOutlined key="ellipsis" />,
-            ]}
-        >
-            <Meta
-            title="Card title"
-            description={fakeData.price}
-            />
-        </Card>
+        <Row align={"bottom"} justify={"center"}>
+            <Col>                  
+                <Card
+                    style={{ width: 500, height: 300, display: "flex", justifyContent: "space-between", padding: "20px" }}
+                    cover={
+                    <img
+                        alt="example"
+                        src={fakeData.imagesrc}
+                    />
+                    }
+                    actions={[
+                        <HeartOutlined key="addfavorite" onClick={handleClick} style={{ fontSize: '32px', color: '#eb4034' }}/>,
+                    ]}
+                >
+                    <Meta
+                    title={fakeData.name}
+                    description={
+                        <>
+                            <ul>
+                                <li>{fakeData.price}</li>
+                                <li>{fakeData.supplier}</li>
+                                <li>{fakeData.created}</li>
+                                <li>{fakeData.duedate}</li>
+                            </ul>
+                        </>
+                    }
+                    />
+                </Card>
+            </Col>  
+        </Row>
     )
 
 }
