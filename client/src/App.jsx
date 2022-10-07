@@ -3,7 +3,7 @@ import {Route, Routes, useNavigate} from "react-router-dom";
 import DetailsPage from './pages/details'
 import AddAdvertisementPage from './pages/add-advertisement'
 import FavoritesPage from './pages/favorites'
-import HomePage from './pages/home';
+// import HomePage from './pages/home';
 import { Breadcrumb, Layout, Menu } from 'antd';
 const { Header, Content, Footer } = Layout;
 
@@ -26,7 +26,7 @@ function App() {
       />
     </Header> */}
       <Routes>
-        <Route path="/" element={<HomePage />}/>
+        {/* <Route path="/" element={<HomePage />}/> */}
         <Route path="/favorites" element={<FavoritesPage />} />
         <Route path="/add-advertisement" element={<AddAdvertisementPage />} />
         <Route path="/details/:id" element={<DetailsPage />} />

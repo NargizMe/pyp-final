@@ -6,7 +6,7 @@ const initialState = {
 
 
 export const adsReducer = (state = initialState, action) => {
-
+console.log(action);
     switch (action.type) {
         case 'GET_ADS_START':
             return {
