@@ -6,10 +6,19 @@ import {
   HeartOutlined,
 } from "@ant-design/icons";
 import { Card } from "antd";
+import { useDispatch, useSelector } from "react-redux";
+import { addToFavoritesAction } from "../redux/actions/ads.actions";
 
 const { Meta } = Card;
 
-function CardItem() {
+function CardItem(props) {
+  const dispatch = useDispatch();
+
+  function handleFavorite(item) {
+    console.log(item);
+    dispatch(addToFavoritesAction(item));
+  }
+
   return (
     <div>
       <Card
@@ -17,18 +26,18 @@ function CardItem() {
         cover={
           <img
             alt="example"
-            src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+            src={props.imgUrl}
           />
         }
         actions={[
-          <HeartOutlined key="settings" />,
+          <HeartOutlined
+            onClick={() => handleFavorite(props.data)}
+            key="settings"
+          />,
           <EllipsisOutlined key="ellipsis" />,
         ]}
       >
-        <Meta
-          title="Card title"
-          description="This is the description"
-        />
+        <Meta title={props.name} description={props.description} />
       </Card>
     </div>
   );
