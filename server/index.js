@@ -11,7 +11,8 @@ app.use(bodyParser.json());
 app.use((cors()))
 mongoose.connect(
   "mongodb+srv://amirovkanan:amirov1532@cluster0.mzcry9b.mongodb.net/?retryWrites=true&w=majority",
-  { useNewUrlParser: true }
+  { useNewUrlParser: true },
+  () => { console.log('db connected') }
 );
 
 //DB TABLE
@@ -41,19 +42,19 @@ app.get("/ads", (req, res) => {
 // Get by Id
 app.get('/ads/:id', (req, res) => {
 
-    let id = req.params.id;
+  let id = req.params.id;
 
-    Ads.findById(id, (err, doc) => {
-        if (!err) {
-            if (doc)
-                res.json(doc);
-            else
-                res.status(404).json({ "message": "Not found!" })
-        }
-        else {
-            res.status(500).json(err)
-        }
-    })
+  Ads.findById(id, (err, doc) => {
+    if (!err) {
+      if (doc)
+        res.json(doc);
+      else
+        res.status(404).json({ "message": "Not found!" })
+    }
+    else {
+      res.status(500).json(err)
+    }
+  })
 })
 
 // Post New Ad
@@ -79,29 +80,29 @@ app.post("/ads", (req, res) => {
 //Update by Id
 app.put('/ads/:id', (req, res) => {
 
-    let id = req.params.id;
+  let id = req.params.id;
 
-    Ads.findByIdAndUpdate(id, req.body, (err, doc) => {
-        if (!err) {
-            res.json({ 'message': 'success' });
-        }
-        else {
-            res.status(500).json(err);
-        }
-    })
+  Ads.findByIdAndUpdate(id, req.body, (err, doc) => {
+    if (!err) {
+      res.json({ 'message': 'success' });
+    }
+    else {
+      res.status(500).json(err);
+    }
+  })
 })
 
 //Delete by Id
 app.delete('/ads/:id', (req, res) => {
 
-    let id = req.params.id;
+  let id = req.params.id;
 
-    Ads.findByIdAndDelete(id, (err) => {
-        if (!err)
-            res.json({ 'messagae': 'Success!' })
-        else
-            res.status(500).json(err)
-    })
+  Ads.findByIdAndDelete(id, (err) => {
+    if (!err)
+      res.json({ 'messagae': 'Success!' })
+    else
+      res.status(500).json(err)
+  })
 })
 
 app.listen(8080, () => {
