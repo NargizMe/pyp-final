@@ -69,7 +69,7 @@ app.post("/ads", (req, res) => {
     price: req.body.price,
     description: req.body.description,
     email: req.body.email,
-    imgUrl: req.body.imageUrl,
+    imgUrl: req.body.imgUrl,
 
   });
   ad.save();
