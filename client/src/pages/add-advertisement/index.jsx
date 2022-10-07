@@ -8,7 +8,7 @@ let schema = yup.object().shape({
   price: yup.number().required(),
   supplierName:yup.string().required(),
   email:yup.string().required(),
-  image:yup.string().required(),
+  imgUrl:yup.string().required(),
   category:yup.string().required(),
   description:yup.string().required(),
 });
@@ -49,7 +49,7 @@ const AddAdvertisementPage = () => {
         <Form.Item name="price" rules={[yupSync]} >
           <Input placeholder="Please input price" />
         </Form.Item>
-        <Form.Item name="image" rules={[yupSync]} >
+        <Form.Item name="imgUrl" rules={[yupSync]} >
           <Input placeholder="Please input image link" />
         </Form.Item>
         <Form.Item name="supplierName" rules={[yupSync]} >
