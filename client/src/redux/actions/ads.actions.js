@@ -1,6 +1,6 @@
 import axios from "axios"
 
-let baseUrl = ``;
+let baseUrl = `http://localhost:8080/ads`;
 
 export const getAllAds = () => {
     return async (dispatch) => {
